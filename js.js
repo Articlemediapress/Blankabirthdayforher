@@ -1,9 +1,20 @@
+// Show quote with fade-in effect
+document.getElementById("show-quote").addEventListener("click", function() {
+    let quote = document.getElementById("birthday-quote");
+    quote.style.display = "block";
+    setTimeout(() => {
+        quote.style.opacity = "1";
+    }, 10);
+});
+
+// Add event listeners for confetti on images
 document.querySelectorAll('.confetti-trigger').forEach(img => {
     img.addEventListener('click', (event) => {
         createConfetti(event.clientX, event.clientY);
     });
 });
 
+// Confetti function
 function createConfetti(x, y) {
     for (let i = 0; i < 20; i++) {
         let confetti = document.createElement('div');
